@@ -1,0 +1,37 @@
+.container{
+  width: 100%;
+  margin: 0 auto;
+}
+.index-header{
+  width: 75%;
+  margin: 0 auto;
+  display: flex;
+  height: 70px;
+  line-height: 70px;
+  /* background-color: #bfbfbf; */
+  background-color: transparent;
+  color: white;
+  /* box-shadow: 0px 1px 1px #bfbfbf */
+}
+.index-header a{
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 16px;
+}
+a:hover{
+  color: orangered
+}
+.index-tab .orangered{
+  color: orangered
+}
+.title-items{
+  display: flex;
+  margin-left: 20px;
+}
+.index-tab{
+  margin: 0 10px;
+}
+.index-douyu-icon{
+  /* align-items: -5px; */
+  padding-top: 10px
+}

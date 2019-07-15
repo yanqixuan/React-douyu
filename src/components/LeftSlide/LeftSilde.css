@@ -1,0 +1,11 @@
+.left-container{
+  width: 12.5%;
+  background-color: #333
+}
+
+.left-title-text{
+  height: 48px;
+  line-height: 48px;
+  color: #868686;
+  padding-left: 10px;
+}

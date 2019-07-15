@@ -1,0 +1,26 @@
+.group-container{
+  border: 1px solid #b2b2b2;
+  border-top: 5px solid orangered;
+  border-radius: 10px;
+  background-color: #fff;
+  color: #000000
+}
+.items{
+  width: 80px;
+  height: 24px;
+  line-height: 24px;
+  background-color: #bfbfbf;
+  border-radius: 24px;
+  margin: 5px;
+  text-align: center;
+  /* padding: 0 px; */
+}
+.item{
+
+  font-family: inherit;
+  font-size: 4px;
+  color: #000000
+}
+.content{
+  display: flex;
+}

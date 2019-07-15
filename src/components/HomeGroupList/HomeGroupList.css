@@ -1,0 +1,34 @@
+.home-group-list-container{
+  
+  margin-top: 20px;
+  width: 100%;
+}
+.home-group-list-items{
+  display: flex;
+}
+.home-group-list-title{
+  
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  font-size: 20px;
+}
+.home-group-list-text{
+  color: #000;
+}
+.home-group-list-text:hover {
+  color: orangered
+}
+.home-group-list-title img{
+  width: 36px;
+  height: 36px;
+  vertical-align: -11px;
+}
+.list-item{
+  margin-right: 10px;
+  flex: 1;
+  overflow: hidden;
+}
+.home-group-list-container :last-child{
+  margin-right: 0px;
+}

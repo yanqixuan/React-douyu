@@ -1,0 +1,30 @@
+.left-group-container{
+  width: 100%;
+}
+.left-group-item{
+  color: #868686
+}
+.left-second-title{
+  color: #868686;
+  border-left: orangered 3px solid;
+  padding-left: 8px;
+}
+.left-group-items{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  font-size: 14px;
+}
+.left-group-item{
+  width: 33%;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  /* font-size: 15px; */
+  height: 26px;
+  line-height: 26px;
+  text-align: center;
+  border-radius: 2px;
+}
