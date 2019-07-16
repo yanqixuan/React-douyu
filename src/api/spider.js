@@ -1,6 +1,7 @@
 
 const axios = require('axios')
 const cheerio = require('cheerio')
+axios.defaults.baseURL = ''
 
 // const url = 'https://www.douyu.com/directory/all';
 function spider(url,className)  {

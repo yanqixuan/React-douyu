@@ -6,6 +6,7 @@ import URL from '../../api/url/index'
 import spider from '../../api/spider'
 const axios = require('axios')
 const cheerio = require('cheerio')
+axios.defaults.baseURL = ''
 
 export class LeftSlide extends Component {
   state = {
@@ -22,17 +23,37 @@ export class LeftSlide extends Component {
       {
         text: '赛事'
       }
-    ]
+    ],
+    test:{
+
+    }
   }
   componentWillMount() {
+    // console.log(URL.LIVE_URL)
+    // const AsideMenuTitle = spider(URL.LIVE_URL,'Aside-menu-title')
+    // const AsideMenuItem = spider(URL.LIVE_URL,'Aside-menu-item')
+    // console.log(AsideMenuTitle,AsideMenuItem)
+
     function gettt() {
-      axios.get('/directory/all', (res) => {
-        console.log('res---------', res)
-        const $ = cheerio.load(res.data)
+      axios.get('/douyu/directory/all', (res) => {
+      // axios.get('/api/v1/live', (res) => {
+        this.setState({
+          test:res
+        })
+        // console.log('res---------', res)
+        // const $ = cheerio.load(res.data)
         // console.log($('.Aside-menu-title').text())
+      })
+      .then(function(response){
+        console.log(response)
+      })
+      .catch(function(error){
+        console.log(error)
       })
     }
     gettt()
+
+
     // console.log(URL.LIVE_API)
     // request(LIVE_API,function(err,res,body){
     //   console.log(res)
@@ -44,9 +65,6 @@ export class LeftSlide extends Component {
     // const AsideMenuTitle = spider('/directory/all', 'Aside-menu-title')
     // const AsideMenuItem = spider('/directory/all', 'Aside-menu-item')
     // console.log(AsideMenuTitle,AsideMenuItem)
-  }
-  Control() {
-
   }
   render() {
     const leftTitle = this.state.slideTitle.map(item => {
@@ -60,6 +78,7 @@ export class LeftSlide extends Component {
       <div className='left-container'>
         {leftTitle}
         <LeftBlock />
+        {this.test}
       </div>
     )
   }
