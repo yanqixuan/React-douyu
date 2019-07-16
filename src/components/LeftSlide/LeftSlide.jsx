@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom'
 import './LeftSilde.css'
 import URL from '../../api/url/index'
 import spider from '../../api/spider'
+import getApi from '../../api/getApi'
 const axios = require('axios')
 const cheerio = require('cheerio')
 axios.defaults.baseURL = ''
@@ -29,29 +30,31 @@ export class LeftSlide extends Component {
     }
   }
   componentWillMount() {
+    // const live = getApi(URL.LIVE_API)
+    // console.log(live)
     // console.log(URL.LIVE_URL)
     // const AsideMenuTitle = spider(URL.LIVE_URL,'Aside-menu-title')
     // const AsideMenuItem = spider(URL.LIVE_URL,'Aside-menu-item')
     // console.log(AsideMenuTitle,AsideMenuItem)
 
-    function gettt() {
-      axios.get('/douyu/directory/all', (res) => {
-      // axios.get('/api/v1/live', (res) => {
-        this.setState({
-          test:res
-        })
-        // console.log('res---------', res)
-        // const $ = cheerio.load(res.data)
-        // console.log($('.Aside-menu-title').text())
-      })
-      .then(function(response){
-        console.log(response)
-      })
-      .catch(function(error){
-        console.log(error)
-      })
-    }
-    gettt()
+    // function gettt() {
+    //   // axios.get('/douyu', (res) => {
+    //   axios.get('/api/v1/live', (res) => {
+    //     // this.setState({
+    //     //   test:res
+    //     // })
+    //     // console.log('res---------', res)
+    //     // const $ = cheerio.load(res.data)
+    //     // console.log($('.Aside-menu-title').text())
+    //   })
+    //   .then(function(response){
+    //     console.log(response)
+    //   })
+    //   .catch(function(error){
+    //     console.log(error)
+    //   })
+    // }
+    // gettt()
 
 
     // console.log(URL.LIVE_API)

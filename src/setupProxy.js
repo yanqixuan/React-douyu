@@ -10,7 +10,7 @@ module.exports = function(app) {
   ),
   app.use(
     proxy('/douyu', {
-      target: 'https://www.douyu.com',
+      target: 'https://douyu.com',
       changeOrigin: true,
       secure: false,
     })

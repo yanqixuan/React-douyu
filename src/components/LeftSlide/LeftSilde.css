@@ -1,4 +1,11 @@
 .left-container{
+  overflow: hidden;
+  /* float: left; */
+  position: fixed;
+  left: 0;
+  top: 70px;
+  bottom: 0;
+  height: 100%;
   width: 12.5%;
   background-color: #333
 }

@@ -1,0 +1,23 @@
+.live-content{
+  /* position: absolute; */
+  margin-left: 12.5%;
+  width: 87.5%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.live-content-item{
+  /* background-color: #fff; */
+  /* flex: 0.2; */
+  /* position: absolute; */
+  height: 100%;
+  width: 20%;
+  /* height: 210px; */
+  margin-bottom: 20px;
+  padding: 0 14px;
+  transition: transfrom 0.3s;
+  
+}
+.ListItem-container{
+  border: 0;
+}

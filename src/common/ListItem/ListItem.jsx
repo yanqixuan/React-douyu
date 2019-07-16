@@ -16,14 +16,14 @@ export class ListItem extends Component {
       <div className="ListItem-container">
         <NavLink>
           <div className="ListItem-img">
-            <img src={this.state.listData.src} />
+            <img src={this.state.listData.room_src} />
           </div>
           <div className="ListItem-content">
             <div className="ListItem-title">
-              <span className="ListItem-group"><h3>{this.state.listData.group}</h3></span><h2 className="ListItem-title-name">{this.state.listData.title}</h2>
+              <span className="ListItem-group"><h3>{this.state.listData.game_name}</h3></span><h2 className="ListItem-title-name">{this.state.listData.room_name}</h2>
             </div>
             <div className="ListItem-info">
-              <h3><span className='ListItem-hot'>{this.state.listData.hot}万</span><img src="" alt="" /><span className="ListItem-master">{this.state.listData.master}</span></h3>
+              <h3><span className='ListItem-hot'>{(this.state.listData.hn/10000).toFixed(1)}万</span><img src="" alt="" /><span className="ListItem-master">{this.state.listData.nickname}</span></h3>
             </div>
           </div>
         </NavLink>
