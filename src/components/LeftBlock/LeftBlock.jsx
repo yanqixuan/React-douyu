@@ -14,9 +14,11 @@ export class LeftBlock extends Component {
     const leftGroupItems = this.state.leftGroupItems.map(items => {
       const leftGroupItem = items.leftGroupItem.map(item => {
         return (
-          <NavLink className='left-group-item'>
-            {item}
-          </NavLink>
+          <div className='left-group-item-wraper'>
+            <NavLink className='left-group-item'>
+              {item}
+            </NavLink>
+          </div>
         )
       })
       return (

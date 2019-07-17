@@ -1,0 +1,9 @@
+.group-content{
+  /* position: absolute; */
+  padding-top: 40px;
+  margin-left: 12.5%;
+  width: 87.5%;
+  /* display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap; */
+}
