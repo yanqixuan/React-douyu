@@ -15,7 +15,7 @@ export class GroupItem extends Component {
       groupData: this.props.groupData,
       src
     })
-    console.log(src)
+    // console.log(src)
   }
   render() {
     return (

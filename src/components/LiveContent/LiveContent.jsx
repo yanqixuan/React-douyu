@@ -6,26 +6,26 @@ import './LiveContent.css'
 
 export class LiveContent extends Component {
   state = {
+    // liveSonApi:this.props.liveSonApi,
     liveList:[
 
     ]
   }
   getData = (res) => {
-    // console.log(res.data.data)
     const liveList = res.data.data
-    // return res;
     this.setState({
       liveList
     })
-    console.log(this.state)
+    // console.log(this.state)
+    // console.log('leftContent',this.props)
   }
   componentWillMount(){
-    getApi(URL.LIVE_API,this.getData)
-  }
-  componentDidMount(){
-    console.log(this.state)
+    // this.props.changeSonApi('这是更改后的api')
+    getApi(URL.LIVE_API+this.props.liveSonApi,this.getData)
   }
   render() {
+    getApi(URL.LIVE_API_BASE+this.props.liveSonApi+'?&limit=30&offset=0',this.getData)
+    // console.log(URL.LIVE_API+this.props.liveSonApi)
     const liveContentList = this.state.liveList.map(item => {
       return (
         <div className="live-content-item">

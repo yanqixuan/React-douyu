@@ -1,13 +1,10 @@
 import React, { Component } from 'react'
-import LeftBlock from '../LeftBlock/LeftBlock'
+// import LeftBlock from '../LeftBlock/LeftBlock'
+import LeftBlock from '../../pages/containers/LeftBlock'
 import { NavLink } from 'react-router-dom'
 import './LeftSilde.css'
 import URL from '../../api/url/index'
-import spider from '../../api/spider'
 import getApi from '../../api/getApi'
-const axios = require('axios')
-const cheerio = require('cheerio')
-axios.defaults.baseURL = ''
 
 export class LeftSlide extends Component {
   state = {
@@ -25,49 +22,19 @@ export class LeftSlide extends Component {
         text: '赛事'
       }
     ],
-    test:{
-
-    }
+    slideList:[]
   }
-  componentWillMount() {
-    // const live = getApi(URL.LIVE_API)
-    // console.log(live)
-    // console.log(URL.LIVE_URL)
-    // const AsideMenuTitle = spider(URL.LIVE_URL,'Aside-menu-title')
-    // const AsideMenuItem = spider(URL.LIVE_URL,'Aside-menu-item')
-    // console.log(AsideMenuTitle,AsideMenuItem)
-
-    // function gettt() {
-    //   // axios.get('/douyu', (res) => {
-    //   axios.get('/api/v1/live', (res) => {
-    //     // this.setState({
-    //     //   test:res
-    //     // })
-    //     // console.log('res---------', res)
-    //     // const $ = cheerio.load(res.data)
-    //     // console.log($('.Aside-menu-title').text())
-    //   })
-    //   .then(function(response){
-    //     console.log(response)
-    //   })
-    //   .catch(function(error){
-    //     console.log(error)
-    //   })
-    // }
-    // gettt()
-
-
-    // console.log(URL.LIVE_API)
-    // request(LIVE_API,function(err,res,body){
-    //   console.log(res)
-    // })
-    // start(URL.LIVE_API)
-    // console.log(start(LIVE_API))
-    // const AsideMenuTitle = spider(URL.LIVE_URL,'Aside-menu-title')
-    // const AsideMenuItem = spider(URL.LIVE_URL,'Aside-menu-item')
-    // const AsideMenuTitle = spider('/directory/all', 'Aside-menu-title')
-    // const AsideMenuItem = spider('/directory/all', 'Aside-menu-item')
-    // console.log(AsideMenuTitle,AsideMenuItem)
+  getData = (res) => {
+    // console.log(res.data.data)
+    const slideList = res.data.data
+    // return res;
+    this.setState({
+      slideList
+    })
+    // console.log(this.state)
+  }
+  componentWillMount(){
+    getApi(URL.FATHER_API,this.getData)
   }
   render() {
     const leftTitle = this.state.slideTitle.map(item => {
@@ -77,11 +44,15 @@ export class LeftSlide extends Component {
         </div>
       )
     })
+    const slideList = this.state.slideList.map(item => {
+      return (
+        <LeftBlock cateName={item.cate_name} shortName={item.short_name} />
+      )
+    })
     return (
       <div className='left-container'>
         {leftTitle}
-        <LeftBlock />
-        {this.test}
+        {slideList}
       </div>
     )
   }
