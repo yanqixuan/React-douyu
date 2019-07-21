@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
-import GroupItem from '../../common/GroupItem/GroupItem'
+// import GroupItem from '../../common/GroupItem/GroupItem'
+import GroupItem from '../../pages/containers/GroupItem'
+import { NavLink } from 'react-router-dom'
 import getApi from '../../api/getApi'
 import URL from '../../api/url/index'
 import './GroupList.css'
 export class GroupList extends Component {
   state = {
     // shortName:'',
-    groupList:[
+    groupList: [
 
     ]
   }
@@ -18,18 +20,20 @@ export class GroupList extends Component {
     })
     // console.log(this.state)
   }
-  componentWillMount(){
+  componentWillMount() {
     // this.setState({
     //   shortName:this.props.shortName
     // })
-    getApi(URL.SON_API+this.props.shortName,this.getData)
+    getApi(URL.SON_API + this.props.shortName, this.getData)
   }
   render() {
     const groupContentList = this.state.groupList.map(item => {
       return (
+
         <div className="group-content-item" key={item.tag_id}>
-          <GroupItem groupData={item}  />
+            <GroupItem groupData={item} clickId={item.tag_id} />
         </div>
+
       )
     })
     return (

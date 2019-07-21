@@ -17,10 +17,15 @@ export class GroupItem extends Component {
     })
     // console.log(src)
   }
+  handleSonApi = (id) => {
+    this.props.changeSonApi(id);
+    console.log(id)
+  }
   render() {
     return (
       <div className='GroupItem-container'>
-        <NavLink>
+        {/* <NavLink to='../../components/GroupLiveContent/GroupLiveContent.jsx'> */}
+        <NavLink to='/live' onClick = {() => {this.handleSonApi(this.props.clickId)}}>
           <div className="GroupItem-img">
             <img src={this.state.src} alt=""/>
           </div>
